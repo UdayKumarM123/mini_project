@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Type Classifier</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛣️ Road Surface Type Classifier</h1>
+            <p>Upload an image to classify the road surface type</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p class="upload-text">Click to upload or drag and drop</p>
+                <p class="upload-hint">PNG, JPG or JPEG (Max 10MB)</p>
+                <input type="file" id="imageInput" accept="image/png,image/jpeg,image/jpg" hidden>
+            </div>
+
+            <button class="btn btn-primary" id="classifyBtn" disabled>
+                <span id="btnText">Classify Road Type</span>
+                <span id="btnSpinner" class="spinner" hidden>
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"/>
+                        <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="4" fill="none"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+        <div class="results-section" id="resultsSection" hidden>
+            <div class="image-preview">
+                <h3>Uploaded Image</h3>
+                <img id="previewImage" src="" alt="Preview">
+            </div>
+
+            <div class="prediction-results">
+                <h3>Classification Results</h3>
+                
+                <div class="main-prediction">
+                    <div class="prediction-label">Predicted Road Type</div>
+                    <div class="prediction-value" id="predictedClass">-</div>
+                    <div class="confidence-badge" id="confidenceBadge">
+                        <span id="confidenceValue">0%</span> confidence
+                    </div>
+                </div>
+
+                <div class="all-predictions">
+                    <h4>All Class Probabilities</h4>
+                    <div id="probabilityBars"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span id="errorText"></span>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
