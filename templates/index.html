@@ -44,12 +44,31 @@
 
             <div class="prediction-results">
                 <h3>Classification Results</h3>
-                
                 <div class="main-prediction">
                     <div class="prediction-label">Predicted Road Type</div>
                     <div class="prediction-value" id="predictedClass">-</div>
                     <div class="confidence-badge" id="confidenceBadge">
                         <span id="confidenceValue">0%</span> confidence
+                    </div>
+                </div>
+
+                <div class="road-details" id="roadDetails">
+                    <h4>Surface Details</h4>
+                    <p class="road-description" id="roadDescription"></p>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">Rolling Resistance (Crr)</div>
+                            <div class="metric-value" id="crrRange">-</div>
+                            <div class="metric-sub">Mean: <span id="meanCrr">-</span></div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Energy Available</div>
+                            <div class="metric-value energy-positive" id="energyAvailable">-</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Energy Reduced</div>
+                            <div class="metric-value energy-negative" id="energyReduced">-</div>
+                        </div>
                     </div>
                 </div>
 
@@ -59,17 +78,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="error-message" id="errorMessage" hidden>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <span id="errorText"></span>
-        </div>
     </div>
-
+    <!-- Make sure it's at the END of body -->
     <script src="static/script.js"></script>
 </body>
 </html>

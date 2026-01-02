@@ -188,6 +188,69 @@ header p {
     margin-bottom: 20px;
 }
 
+.road-details {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.road-details h4 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.road-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #718096;
+    margin-bottom: 8px;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 5px;
+}
+
+.metric-value.energy-positive {
+    color: #48bb78;
+}
+
+.metric-value.energy-negative {
+    color: #f56565;
+}
+
+.metric-sub {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
 .probability-item {
     margin-bottom: 15px;
 }
@@ -223,22 +286,6 @@ header p {
     transition: width 0.6s ease;
 }
 
-.error-message {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-}
-
-
-.error-message svg {
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-}
-
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -255,5 +302,9 @@ header p {
     
     .upload-box {
         padding: 40px 20px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
     }
 }
